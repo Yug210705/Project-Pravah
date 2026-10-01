@@ -28,8 +28,11 @@ if (Test-Path "$ScriptDir\venv\Scripts\Activate.ps1") {
     python -m venv venv
     & ".\venv\Scripts\Activate.ps1"
     Write-Host "[INFO] Installing requirements..." -ForegroundColor Cyan
-    pip install -r requirements.txt
+    pip install -r ..\..\requirements.txt
 }
+
+Write-Host "[INFO] Ensuring requirements are installed..." -ForegroundColor Cyan
+pip install -r ..\..\requirements.txt
 
 python gateway.py $args
 
